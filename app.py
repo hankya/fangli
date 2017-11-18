@@ -1,9 +1,8 @@
 import logging
-
 import sys
-
 import bottle
 from fangli.weixin.app import setup_routing as setup_weixin_routing
+
 
 app = bottle.Bottle()
 setup_weixin_routing(app)
@@ -14,7 +13,7 @@ root.handlers = []  # fix reimport issue
 root.setLevel(logging.INFO)
 ch = logging.StreamHandler(sys.stdout)
 ch.setLevel(logging.INFO)
-ch.setFormatter(log_format)
+ch.setFormatter(logging.Formatter(log_format))
 root.addHandler(ch)
 
 if __name__ == '__main__':
