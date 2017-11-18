@@ -4,4 +4,4 @@ REPOS_ROOT=/opt/tiger
 export PYTHONPATH=$REPOS_ROOT
 cd $REPOS_ROOT/fangli
 source env/bin/activate
-exec python -m gunicorn.app.wsgiapp -c gunicorn_configs/api.py fangli.app
+exec python -m gunicorn.app.wsgiapp -c gunicorn_configs/api.py fangli.app 1>>fangli.log 2>> fangli.log
