@@ -1,4 +1,4 @@
-COUPON_TPL = """已为您找到 *{q}*, 点此前往{}"""
+COUPON_TPL = """已为您找到 *{q}*, 点此前往http://taoxmall.com/ProductList.aspx?m=search&a=index&keyWord={q}&ReferralId=8548"""
 CMD_TPL = """
 1. 查找优惠券请以"找"开头，例如"找面膜"
 """

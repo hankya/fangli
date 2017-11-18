@@ -1,7 +1,7 @@
 from wechat_sdk import WechatConf, WechatBasic
 from bottle import request, response
 from fangli.weixin import const
-import json
+from fangli.coupon.bot import CouponBot
 
 wechat_conf = WechatConf(token=const.Token,
                          appid=const.AppId,
@@ -31,7 +31,8 @@ def wx_bot_view():
     nonce = request.query.get("nonce")
     wx_sdk.parse_data(request.body.read(), signature, timestamp, nonce)
     response.status = 200
-    content = json.dumps(wx_sdk.message.__dict__)
-    resp = wx_sdk.response_text(content)
+    msg = wx_sdk.message.content
+    resp = CouponBot.respond(msg)
+    wx_resp = wx_sdk.response_text(resp)
     response.status = 200
-    return resp
+    return wx_resp
