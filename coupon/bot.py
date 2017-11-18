@@ -1,13 +1,12 @@
 COUPON_TPL = """已为您找到<a href="{url}">{q}的优惠券</a>"""
-CMD_TPL = """1. 查找优惠券请以"找"开头，例如"找面膜"""
+CMD_TPL = """1. 查找优惠券请以"找"开头，例如\"找面膜\""""
 PROXY_URL_TPL = """http://fanyi.baidu.com/transpage?query={target}&from=cht&to=zh&source=url&render=1"""
 TARGET_TPL = """http://taoxmall.com/ProductList.aspx?m=search&a=index&keyWord={q}&ReferralId=8548"""
 
 
 def gen_url(q):
-    from urllib.parse import quote
     target = TARGET_TPL.format(q=q)
-    return PROXY_URL_TPL.format(target=quote(target))
+    return PROXY_URL_TPL.format(target=target)
 
 
 class CouponBot:
