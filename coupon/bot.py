@@ -1,6 +1,6 @@
 COUPON_TPL = """已为您找到<a href="{url}">{q}的优惠券</a>"""
 CMD_TPL = """1. 查找优惠券请以"找"开头，例如\"找面膜\""""
-TARGET_TPL = """http://119.27.178.166:6081/ProductList.aspx?m=search&a=index&keyWord={q}&ReferralId=8548"""
+TARGET_TPL = """http://varnish.chunqiufanli.cn/ProductList.aspx?m=search&a=index&keyWord={q}&ReferralId=8548"""
 
 
 class CouponBot:
