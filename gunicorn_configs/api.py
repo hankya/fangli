@@ -1,0 +1,5 @@
+SERVER_PORT = 2891
+SERVER_WORKERS = 10
+
+workers = SERVER_WORKERS
+bind = ":" + str(SERVER_PORT)

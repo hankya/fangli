@@ -1,0 +1,5 @@
+[Service]
+ExecStart=/opt/tiger/fangli/run/real_run
+Restart=always
+[Install]
+WantedBy=default.target
