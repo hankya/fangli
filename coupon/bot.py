@@ -6,7 +6,8 @@ TARGET_TPL = """http://taoxmall.com/ProductList.aspx?m=search&a=index&keyWord={q
 
 def gen_url(q):
     target = TARGET_TPL.format(q=q)
-    return PROXY_URL_TPL.format(target=target)
+    from urllib.parse import quote_plus
+    return PROXY_URL_TPL.format(target=quote_plus(target))
 
 
 class CouponBot:
