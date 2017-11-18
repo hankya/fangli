@@ -31,4 +31,7 @@ def wx_bot_view():
     nonce = request.query.get("nonce")
     wx_sdk.parse_data(request.body.read(), signature, timestamp, nonce)
     response.status = 200
-    return json.dumps(wx_sdk.message.__dict__)
+    content = json.dumps(wx_sdk.message.__dict__)
+    resp = wx_sdk.response_text(content)
+    response.status = 200
+    return resp
